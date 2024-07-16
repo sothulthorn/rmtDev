@@ -7,7 +7,7 @@ export type TJobItems = {
   daysAgo: number;
 };
 
-export type TJobItem = TJobItems & {
+export type TJobItemExpanded = TJobItems & {
   description: string;
   qualifications: string[];
   reviews: string[];
