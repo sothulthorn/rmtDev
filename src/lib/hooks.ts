@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { TJobItem, TJobItems } from './type';
+import { TJobItems } from './type';
 import { BASE_API_URL } from './constants';
+import { useQuery } from '@tanstack/react-query';
 
 export const useJobItems = (searchText: string) => {
   const [jobItems, setJobItems] = useState<TJobItems[]>([]);
@@ -48,6 +49,7 @@ export const useActiveId = () => {
   return activeId;
 };
 
+/*
 export const useJobItem = (id: number | null) => {
   const [jobItem, setJobItem] = useState<TJobItem | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -65,6 +67,29 @@ export const useJobItem = (id: number | null) => {
 
     fetchData();
   }, [id]);
+
+  return { jobItem, isLoading } as const;
+};
+*/
+
+export const useJobItem = (id: number | null) => {
+  const { data, isLoading } = useQuery(
+    ['job-item', id],
+    async () => {
+      const response = await fetch(`${BASE_API_URL}/${id}`);
+      const data = await response.json();
+      return data;
+    },
+    {
+      staleTime: 1000 * 60 * 60,
+      refetchOnWindowFocus: false,
+      retry: false,
+      enabled: Boolean(id),
+      onError: () => {},
+    }
+  );
+
+  const jobItem = data.jobItem;
 
   return { jobItem, isLoading } as const;
 };
