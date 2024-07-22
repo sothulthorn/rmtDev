@@ -4,7 +4,7 @@ import { useLocalStorage } from '../lib/hooks';
 export const BookmarkContext = createContext(null);
 
 const BookmarkContextProvider = ({ children }) => {
-  const [bookmarkedIds, setBookmarkedIds] = useLocalStorage(
+  const [bookmarkedIds, setBookmarkedIds] = useLocalStorage<number[]>(
     'bookmarkedIds',
     []
   );
