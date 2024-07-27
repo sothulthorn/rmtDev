@@ -23,7 +23,6 @@ function App() {
           <Logo />
           <BookmarksButton />
         </HeaderTop>
-
         <SearchForm />
       </Header>
 
@@ -33,12 +32,9 @@ function App() {
             <ResultsCount />
             <SortingControls />
           </SidebarTop>
-
           <JobListSearch />
-
           <PaginationControls />
         </Sidebar>
-
         <JobItemContent />
       </Container>
 

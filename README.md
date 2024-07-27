@@ -1,27 +1,27 @@
-# React + TypeScript + Vite
+# rmtDev: Find Your Remote Developer Job
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![](/screenshots/main-screen.png)
 
-Currently, two official plugins are available:
+In an era where remote work has become the norm, especially for developers seeking flexibility and a better work-life balance, **rmtDev** is here to streamline your remote job search. This React application is designed to help developers effortlessly find remote job opportunities, view detailed job descriptions, bookmark their favorite listings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features:
 
-## Expanding the ESLint configuration
+1. **Search for Remote Jobs**: Discover remote job opportunities tailored specifically for developers across various tech stacks and roles. Our intuitive search functionality allows you to filter and sort through numerous listings to find the perfect match.
+2. **View Job Details**: Get comprehensive information about each job listing, including company details, job requirements, responsibilities, and benefits. This ensures you have all the necessary information to make informed decisions about your job applications.
+3. **Bookmark Jobs**: Keep track of interesting job listings by bookmarking them. This feature helps you manage your job search efficiently, allowing you to revisit and apply to jobs at your convenience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+```sh
+# Clone the respository
+git clone https://github.com/sothulthorn/rmtDev.git
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+# Navigate to the project directory
+cd rmtDev
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
